@@ -1,7 +1,7 @@
-import { Table, Tag, Space } from 'antd'
+import { Table, Tag, Space, Radio, Divider } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 interface User {
   key: string
@@ -11,13 +11,30 @@ interface User {
   tags: string[]
 }
 
+const rowSelection = {
+  onChange: (selectedRowKeys: any, selectedRows: any) => {
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      'selectedRows: ',
+      selectedRows
+    )
+  },
+  getCheckboxProps: (record: Record<string, any>) => ({
+    disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    name: record.name,
+  }),
+}
 const AntDTable = () => {
+  const [selectionType, setSelectionType] = useState<
+    'checkbox' | 'radio' | undefined
+  >('checkbox')
+
   const columns: ColumnsType<User> = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: (text: string) => <a href='/'>{text}</a>,
+      render: (text: string) => <a href='#'>{text}</a>,
       sorter: (a, b) => a.name.length - b.name.length,
       sortDirections: ['descend', 'ascend'],
     },
@@ -56,8 +73,8 @@ const AntDTable = () => {
       key: 'action',
       render: (text: string, record: { [propName: string]: any }) => (
         <Space size='middle'>
-          <a href='/'>Invite {record.name}</a>
-          <a href='/'>Delete</a>
+          <a href='#'>Invite {record.name}</a>
+          <a href='#'>Delete</a>
         </Space>
       ),
     },
@@ -71,6 +88,7 @@ const AntDTable = () => {
       address: 'New York No. 1 Lake Park',
       tags: ['nice', 'developer'],
     },
+
     {
       key: '2',
       name: 'Jim Green',
@@ -85,10 +103,46 @@ const AntDTable = () => {
       address: 'Sidney No. 1 Lake Park',
       tags: ['cool', 'teacher'],
     },
+    {
+      key: '4',
+      name: 'Test Person',
+      age: 2,
+      address: '123 Random Destination Some City',
+      tags: ['happy', 'product manager'],
+    },
+    {
+      key: '5',
+      name: 'Lorem Random',
+      age: 10,
+      address: '234 Mission St, San Francisco',
+      tags: ['CEO'],
+    },
   ]
 
   return (
-    <Table style={{ padding: '1rem' }} columns={columns} dataSource={data} />
+    <div>
+      <Radio.Group
+        onChange={({ target: { value } }) => {
+          setSelectionType(value)
+        }}
+        value={selectionType}
+      >
+        <Radio value='checkbox'>Checkbox</Radio>
+        <Radio value='radio'>radio</Radio>
+      </Radio.Group>
+
+      <Divider />
+
+      <Table
+        rowSelection={{
+          type: selectionType,
+          ...rowSelection,
+        }}
+        style={{ padding: '1rem' }}
+        columns={columns}
+        dataSource={data}
+      />
+    </div>
   )
 }
 
