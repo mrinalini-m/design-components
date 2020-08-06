@@ -22,16 +22,56 @@ export default function MaterialTableDemo() {
       {
         title: 'Birth Place',
         field: 'birthCity',
-        lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
+        lookup: {
+          0: 'San Francisco',
+          1: 'Sunnyvale',
+          2: 'San Jose',
+          3: 'Mars',
+        },
       },
     ],
     data: [
-      { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
       {
-        name: 'Zerya Betül',
-        surname: 'Baran',
-        birthYear: 2017,
-        birthCity: 34,
+        name: 'Lorem',
+        surname: 'Ipsum',
+        birthYear: 1987,
+        birthCity: 0,
+      },
+      {
+        name: 'Testo',
+        surname: 'Noname',
+        birthYear: 1945,
+        birthCity: 1,
+      },
+      {
+        name: 'Fake',
+        surname: 'Notebook',
+        birthYear: 1977,
+        birthCity: 2,
+      },
+      {
+        name: 'Random',
+        surname: 'Person',
+        birthYear: 1900,
+        birthCity: 3,
+      },
+      {
+        name: 'Dolor',
+        surname: 'Amet',
+        birthYear: 2000,
+        birthCity: 0,
+      },
+      {
+        name: 'Perspiciatis',
+        surname: 'Omnis',
+        birthYear: 1990,
+        birthCity: 2,
+      },
+      {
+        name: 'Consectetur',
+        surname: 'Adipiscing',
+        birthYear: 1998,
+        birthCity: 0,
       },
     ],
   })
@@ -41,6 +81,9 @@ export default function MaterialTableDemo() {
       style={{ marginBottom: '3rem' }}
       title='Editable Example'
       columns={state.columns}
+      options={{
+        filtering: true,
+      }}
       data={state.data}
       editable={{
         onRowAdd: (newData) =>

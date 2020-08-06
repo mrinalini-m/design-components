@@ -255,6 +255,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
+      paddingBottom: '3rem',
     },
     paper: {
       width: '100%',

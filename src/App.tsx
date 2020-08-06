@@ -11,8 +11,11 @@ import Link from '@material-ui/core/Link'
 
 function App() {
   return (
-    <div className='App' style={{ padding: '2rem' }}>
-      <Typography variant='h4' gutterBottom>
+    <div className='App' style={{ padding: '2rem', paddingTop: '4rem' }}>
+      <Typography variant='h3' gutterBottom>
+        Table Demos
+      </Typography>
+      <Typography variant='h4' gutterBottom style={{ paddingTop: '4rem' }}>
         <Link href='https://ant.design/components/table/'>
           Ant Design Table
         </Link>
