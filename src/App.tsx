@@ -28,6 +28,11 @@ function App() {
         </Link>
       </Typography>
       <MaterialTable />
+      <Typography variant='h4' gutterBottom>
+        <Link href='https://material-ui.com/components/tables/'>
+          Material UI Table
+        </Link>
+      </Typography>
       <MaterialUITable />
       <Links />
     </div>

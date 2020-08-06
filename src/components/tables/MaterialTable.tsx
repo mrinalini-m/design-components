@@ -38,6 +38,7 @@ export default function MaterialTableDemo() {
 
   return (
     <MaterialTable
+      style={{ marginBottom: '3rem' }}
       title='Editable Example'
       columns={state.columns}
       data={state.data}
