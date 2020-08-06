@@ -1,20 +1,25 @@
 import { Table, Tag, Space } from 'antd'
+import { ColumnsType } from 'antd/es/table'
+
 import React from 'react'
 
-export interface ColumnType<RecordType> {
-  dataIndex?: string
-  key: React.Key
-  title?: React.ReactNode
-  render?: (value: any, record: RecordType, index: number) => React.ReactNode
+interface User {
+  key: string
+  name: string
+  age: number
+  address: string
+  tags: string[]
 }
 
-const TableExample = () => {
-  const columns: Array<ColumnType<Record<string, any>>> = [
+const AntDTable = () => {
+  const columns: ColumnsType<User> = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: (text: string) => <a>{text}</a>,
+      render: (text: string) => <a href='/'>{text}</a>,
+      sorter: (a, b) => a.name.length - b.name.length,
+      sortDirections: ['descend', 'ascend'],
     },
     {
       title: 'Age',
@@ -51,8 +56,8 @@ const TableExample = () => {
       key: 'action',
       render: (text: string, record: { [propName: string]: any }) => (
         <Space size='middle'>
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
+          <a href='/'>Invite {record.name}</a>
+          <a href='/'>Delete</a>
         </Space>
       ),
     },
@@ -86,4 +91,5 @@ const TableExample = () => {
     <Table style={{ padding: '1rem' }} columns={columns} dataSource={data} />
   )
 }
-export default TableExample
+
+export default AntDTable
