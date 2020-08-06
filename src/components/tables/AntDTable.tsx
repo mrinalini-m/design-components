@@ -1,8 +1,8 @@
+/* eslint-disable */
 import { Table, Tag, Space, Radio, Divider } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 
 import React, { useState } from 'react'
-
 interface User {
   key: string
   name: string
