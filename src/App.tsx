@@ -1,5 +1,10 @@
 import React from 'react'
-import { AntDTable, MaterialTable, Links } from './components/tables'
+import {
+  AntDTable,
+  MaterialTable,
+  MaterialUITable,
+  Links,
+} from './components/tables'
 import './App.css'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
@@ -23,6 +28,7 @@ function App() {
         </Link>
       </Typography>
       <MaterialTable />
+      <MaterialUITable />
       <Links />
     </div>
   )
