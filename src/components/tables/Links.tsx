@@ -3,8 +3,8 @@ import { Link, Card } from '@material-ui/core'
 
 const Links = () => {
   return (
-    <Card style={{ textAlign: 'left', padding: '2rem' }}>
-      <h2 id='table-examples'>Table Examples</h2>
+    <Card style={{ textAlign: 'left', padding: '2rem', marginTop: '2rem' }}>
+      <h2 id='table-examples'>Table References</h2>
       <ol>
         <li>
           <Link href='https://gumdrops.gumgum.com/?path=/docs/molecules-table--default'>
