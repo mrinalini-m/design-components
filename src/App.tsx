@@ -5,14 +5,16 @@ import {
   MaterialTable,
   MaterialUITable,
   TubularReactTable,
+  Reacttable,
+  RCTable,
   Links,
 } from './components/tables'
 import './App.css'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     paddingBottom: {
       paddingBottom: '3rem',
@@ -47,6 +49,7 @@ function App() {
         as base
       </Typography>
       <AntDTable />
+
       <Typography variant='h4' gutterBottom>
         <Link href='https://github.com/mbrn/material-table'>
           Material Table
@@ -65,6 +68,14 @@ function App() {
         </Link>
       </Typography>
       <TubularReactTable />
+      <Typography variant='h4' gutterBottom>
+        <Link href='https://www.npmjs.com/package/rc-table'>RCTable</Link>
+      </Typography>
+      <RCTable />
+      <Typography variant='h4' gutterBottom>
+        <Link href='https://www.npmjs.com/package/react-table'>Reacttable</Link>
+      </Typography>
+      <Reacttable />
       <Links />
     </div>
   )
