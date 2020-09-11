@@ -9,6 +9,7 @@ import { default as RCTable } from './RC-Table'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
+import Title from '../Title'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -18,26 +19,23 @@ const useStyles = makeStyles(() =>
     paddingBottom: {
       paddingBottom: '1rem',
     },
+    tableWrapper: {
+      textAlign: 'center',
+    },
   })
 )
 
 const Tables = () => {
   const classes = useStyles()
   return (
-    <div>
-      <div>
-        <Typography variant='h3' gutterBottom>
-          Table Demos
-        </Typography>
-      </div>
+    <div className={classes.tableWrapper}>
+      <Title>Table Demos</Title>
       <div className={classes.padding}>
         <Typography variant='h4' gutterBottom>
           <Link href='https://ant.design/components/table/'>
             Ant Design Table
           </Link>
         </Typography>
-      </div>
-      <div className={classes.padding}>
         <Typography variant='subtitle2' gutterBottom>
           Uses{' '}
           <Link href='https://www.npmjs.com/package/rc-table'>rc-table</Link> as
