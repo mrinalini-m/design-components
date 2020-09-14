@@ -2,12 +2,19 @@ import React from 'react'
 import Tables from './components/tables'
 import Trees from './components/trees'
 import { Layout } from 'antd'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from 'react-router-dom'
 import { createUseStyles } from 'react-jss'
 import Header from './components/Header'
+
 const useStyles = createUseStyles({
   content: {
     padding: '0 3rem 3rem 3rem',
+    textAlign: 'center',
   },
 })
 
@@ -22,6 +29,7 @@ function App() {
         <Header />
         <Content className={classes.content}>
           <Switch>
+            <Redirect exact from='/' to='/table' />
             <Route path='/table'>
               <Tables />
             </Route>

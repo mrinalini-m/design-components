@@ -8,81 +8,56 @@ import { default as Reacttable } from './Reacttable'
 import { default as RCTable } from './RC-Table'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
-import Title from '../Title'
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    padding: {
-      padding: '2rem',
-    },
-    paddingBottom: {
-      paddingBottom: '1rem',
-    },
-    tableWrapper: {
-      textAlign: 'center',
-    },
-  })
-)
+import Title from '../common/Title'
+import DemoSection from '../common/DemoSection'
 
 const Tables = () => {
-  const classes = useStyles()
   return (
-    <div className={classes.tableWrapper}>
+    <>
       <Title>Table Demos</Title>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom>
-          <Link href='https://ant.design/components/table/'>
-            Ant Design Table
-          </Link>
-        </Typography>
+      <DemoSection
+        href='https://ant.design/components/table/'
+        linkText='Ant Design Table'
+      >
         <Typography variant='subtitle2' gutterBottom>
           Uses{' '}
           <Link href='https://www.npmjs.com/package/rc-table'>rc-table</Link> as
           base
         </Typography>
         <AntDTable />
-      </div>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom>
-          <Link href='https://github.com/mbrn/material-table'>
-            Material Table
-          </Link>
-        </Typography>
+      </DemoSection>
+      <DemoSection
+        href='https://github.com/mbrn/material-table'
+        linkText='Material Table'
+      >
         <MaterialTable />
-      </div>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom>
-          <Link href='https://material-ui.com/components/tables/'>
-            Material UI Table
-          </Link>
-        </Typography>
+      </DemoSection>
+      <DemoSection
+        href='https://material-ui.com/components/tables/'
+        linkText='Material UI Table'
+      >
         <MaterialUITable />
-      </div>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom>
-          <Link href='https://github.com/unosquare/tubular-react'>
-            Tubular React Table
-          </Link>
-        </Typography>
+      </DemoSection>
+      <DemoSection
+        href='https://github.com/unosquare/tubular-react'
+        linkText='Tubular React Table'
+      >
         <TubularReactTable />
-      </div>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom className={classes.paddingBottom}>
-          <Link href='https://www.npmjs.com/package/rc-table'>RCTable</Link>
-        </Typography>
+      </DemoSection>
+      <DemoSection
+        href='https://www.npmjs.com/package/rc-table'
+        linkText='RCTable'
+      >
         <RCTable />
-      </div>
-      <div className={classes.padding}>
-        <Typography variant='h4' gutterBottom className={classes.paddingBottom}>
-          <Link href='https://www.npmjs.com/package/react-table'>
-            Reacttable
-          </Link>
-        </Typography>
+      </DemoSection>
+      <DemoSection
+        href='https://www.npmjs.com/package/react-table'
+        linkText='Reacttable'
+      >
         <Reacttable />
-      </div>
+      </DemoSection>
       <Links />
-    </div>
+    </>
   )
 }
 

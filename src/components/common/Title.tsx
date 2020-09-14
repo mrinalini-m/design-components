@@ -5,7 +5,8 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles(() =>
   createStyles({
     padding: {
-      padding: '2rem',
+      padding: '3rem',
+      paddingBottom: '0',
     },
   })
 )
@@ -13,6 +14,7 @@ const useStyles = makeStyles(() =>
 interface TitleProps {
   children: ReactNode
 }
+
 const Title: FC<TitleProps> = ({ children }: TitleProps) => {
   const classes = useStyles()
   return (

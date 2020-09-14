@@ -15,17 +15,21 @@ const useStyles = createUseStyles({
 })
 
 const CustomHeader = () => {
+  const selectedKey =
+    window.location.pathname === '/'
+      ? 'table'
+      : window.location.pathname.slice(1)
+
   useStyles()
   return (
     <Header>
-      <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
-        <Menu.Item key='1'>
+      <Menu theme='dark' mode='horizontal' defaultSelectedKeys={[selectedKey]}>
+        <Menu.Item key='table'>
           <Link to='/table'>Tables</Link>
         </Menu.Item>
-        <Menu.Item key='2'>
+        <Menu.Item key='tree'>
           <Link to='/tree'>Trees</Link>
         </Menu.Item>
-        <Menu.Item key='3'>nav 3</Menu.Item>
       </Menu>
     </Header>
   )
