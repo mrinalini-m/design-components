@@ -4,6 +4,8 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import 'antd/dist/antd.css'
+import '@blueprintjs/icons/lib/css/blueprint-icons.css'
+import '@blueprintjs/core/lib/css/blueprint.css'
 
 ReactDOM.render(
   <React.StrictMode>

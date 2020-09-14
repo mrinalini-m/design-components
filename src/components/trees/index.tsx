@@ -3,13 +3,13 @@ import Title from '../common/Title'
 import DemoSection from '../common/DemoSection'
 import Typography from '@material-ui/core/Typography'
 import { default as AntDTree } from './AntDTree'
+import { default as BlueprintTree } from './BlueprintTree'
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   treesWrapper: {
     maxWidth: '850px',
     margin: '0 auto',
-    textAlign: 'left',
   },
 })
 
@@ -22,7 +22,11 @@ const Trees = () => {
         href='https://ant.design/components/tree/'
         linkText='Ant Design Tree'
       >
-        <Typography variant='subtitle2' gutterBottom>
+        <Typography
+          variant='subtitle2'
+          gutterBottom
+          style={{ textAlign: 'left' }}
+        >
           1. <code>onCheck</code> and <code>onSelect</code> are two different
           events. If we want to have the checkboxes checked{' '}
           <code>onSelect</code>, checked keys will have to be controlled.
@@ -34,6 +38,7 @@ const Trees = () => {
         style={{
           padding: '1rem',
           paddingBottom: '0',
+          textAlign: 'left',
         }}
       >
         <Typography variant='subtitle2' gutterBottom>
@@ -54,7 +59,6 @@ const Trees = () => {
           As you can see, the scaled tree is much bigger than the wrapping div.
         </Typography>
       </DemoSection>
-
       <DemoSection
         style={{
           backgroundColor: '#ffffb2',
@@ -63,6 +67,13 @@ const Trees = () => {
         }}
       >
         <AntDTree transformScale={1.25} />
+      </DemoSection>
+      <DemoSection
+        style={{ marginTop: '5rem' }}
+        href='https://blueprintjs.com/docs/#core/components/tree'
+        linkText='Blueprint Tree'
+      >
+        <BlueprintTree />
       </DemoSection>
     </div>
   )
